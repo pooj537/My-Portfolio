@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Me</title>
+<style>
+/* ---------- Base Styles ---------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
+body {
+  background: linear-gradient(-45deg,#ff4e50,#1fddff,#6a11cb,#ffcc70);
+  background-size:400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color:#fff;
+  min-height:100vh;
+  display:flex; justify-content:center; align-items:center;
+  overflow:hidden;
+}
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  position:fixed; top:0; left:0; width:100%;
+  background: rgba(0,0,0,0.5); backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 50px; z-index:1000;
+}
+nav h2 {
+  font-size:1.5rem; font-weight:bold;
+  background: linear-gradient(90deg,#fff,#ffcc70);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+nav ul { list-style:none; display:flex; gap:30px; }
+nav ul li a { text-decoration:none; color:#fff; font-size:1rem; transition:0.3s; }
+nav ul li a:hover { color:#ffcc70; }
+
+/* ---------- Floating Glowing Circles ---------- */
+.circle {
+  position:absolute; border-radius:50%; filter:blur(80px); opacity:0.6;
+  animation: float 10s infinite alternate ease-in-out;
+}
+.circle.one { width:200px; height:200px; background:#ff4e50; top:10%; left:15%; }
+.circle.two { width:250px; height:250px; background:#1fddff; bottom:15%; right:20%; animation-delay:2s; }
+.circle.three { width:180px; height:180px; background:#6a11cb; bottom:30%; left:30%; animation-delay:4s; }
+@keyframes float{
+  from{transform:translateY(0) translateX(0);}
+  to{transform:translateY(-40px) translateX(40px);}
+}
+
+/* ---------- Contact Card ---------- */
+.contact-card {
+  position:relative; background: rgba(255,255,255,0.1); padding:40px;
+  border-radius:20px; backdrop-filter:blur(20px); box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  width:90%; max-width:600px; z-index:2; animation:fadeIn 1.2s ease-in-out; margin-top:80px;
+}
+h1 {
+  text-align:center; margin-bottom:25px; font-size:2.8rem;
+  background: linear-gradient(90deg,#ff6a00,#00c6ff);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.form-group { margin-bottom:20px; position:relative; }
+.form-group input, .form-group textarea {
+  width:100%; padding:14px 16px; border-radius:12px; border:none; outline:none;
+  background: rgba(255,255,255,0.15); color:#fff; font-size:1rem; resize:none;
+  transition:0.3s; box-shadow:inset 0 0 10px rgba(255,255,255,0.1);
+}
+.form-group input:focus, .form-group textarea:focus {
+  background: rgba(255,255,255,0.25); box-shadow:0 0 12px #ffcc70,0 0 25px #6a11cb; transform:scale(1.02);
+}
+
+/* Button */
+.btn {
+  width:100%; padding:15px; background: linear-gradient(90deg,#6c63ff,#ff6a00);
+  border:none; border-radius:12px; font-size:1.2rem; font-weight:bold;
+  color:#fff; cursor:pointer; position:relative; overflow:hidden; transition: transform 0.3s ease;
+}
+.btn:hover { transform:scale(1.05); box-shadow:0 0 20px #ffcc70,0 0 40px #6c63ff; }
+.btn::after {
+  content:""; position:absolute; top:50%; left:50%; width:0; height:0;
+  background: rgba(255,255,255,0.3); border-radius:50%; transform:translate(-50%,-50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.btn:active::after { width:300px; height:300px; opacity:0; transition:0s; }
+
+/* Social Links */
+.social { margin-top:25px; text-align:center; }
+.social a { margin:0 12px; font-size:2rem; color:#fff; transition:0.3s; text-decoration:none; }
+.social a:hover { color:#ffcc70; transform:scale(1.2); }
+
+/* Popup */
+.popup {
+  display:none; position:fixed; top:20px; right:20px;
+  background:#28a745; color:white; padding:15px 20px; border-radius:10px;
+  box-shadow:0 0 20px rgba(0,0,0,0.3); font-weight:bold; animation:slideIn 0.5s ease forwards; z-index:10;
+}
+
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes slideIn { from{transform:translateX(100%);opacity:0;} to{transform:translateX(0);opacity:1;} }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h2>MyPortfolio</h2>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Floating Circles -->
+<div class="circle one"></div>
+<div class="circle two"></div>
+<div class="circle three"></div>
+
+<!-- Contact Card -->
+<div class="contact-card">
+  <h1>Contact Me</h1>
+  <form id="contactForm">
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <!-- Social Links -->
+  <div class="social">
+    <a href="https://github.com/pooj537"><ion-icon name="logo-github"></ion-icon></a>
+    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+  </div>
+</div>
+
+<!-- Success Popup -->
+<div class="popup" id="popup">✅ Thank you! Your message has been sent.</div>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!-- JS for popup -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+  setTimeout(()=>{popup.style.display="none";},3000);
+  this.reset();
+});
+</script>
+</body>
+</html>

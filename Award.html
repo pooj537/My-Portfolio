@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,3 +136,142 @@ nav ul li a:hover { color:#ffcc70; }
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awards - Portfolio</title>
+<style>
+/* ---------- Base Styles ---------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
+body {
+  background: linear-gradient(-45deg,#ff4e50,#1fddff,#6a11cb,#ffcc70);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  min-height:100vh;
+  color:#fff;
+  padding-top:100px;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  position:fixed; top:0; left:0; width:100%;
+  background: rgba(0,0,0,0.5); backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 50px; z-index:1000;
+}
+nav h2 {
+  font-size:1.5rem; font-weight:bold;
+  background: linear-gradient(90deg,#fff,#ffcc70);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+nav ul { list-style:none; display:flex; gap:30px; }
+nav ul li a { text-decoration:none; color:#fff; font-size:1rem; transition:0.3s; }
+nav ul li a:hover { color:#ffcc70; }
+
+/* ---------- Gradient Animation ---------- */
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ---------- Awards Container ---------- */
+.awards-container {
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+  padding: 40px 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.award-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.award-card:hover {
+  transform: translateY(-10px);
+  box-shadow:0 15px 35px rgba(255,255,255,0.5);
+}
+
+.award-card img {
+  width:80px; height:80px; object-fit:cover;
+  margin-bottom:15px;
+}
+
+.award-card h3 {
+  font-size:1.4rem;
+  margin-bottom:10px;
+  color:#ffcc70;
+}
+
+.award-card p {
+  font-size:1rem;
+  line-height:1.5;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){ nav{ padding:15px 20px; } nav ul{ gap:15px; } }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h2>MyPortfolio</h2>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Awards Section -->
+<section class="awards-container">
+  <!-- Award 1 -->
+  <div class="award-card">
+    <img src="award1.png" alt="Award Icon">
+    <h3>Best Intern 2025</h3>
+    <p>Awarded for outstanding contribution as a Full Stack Java Developer Intern at Venture Digital India.</p>
+  </div>
+
+  <!-- Award 2 -->
+  <div class="award-card">
+    <img src="award2.png" alt="Award Icon">
+    <h3>Academic Excellence</h3>
+    <p>Graduated with <span style="color:#ffcc70; font-weight:bold;">9.0 CGPA</span> for outstanding academic performance.</p>
+  </div>
+
+  <!-- Award 3 -->
+  <div class="award-card">
+    <img src="award3.png" alt="Award Icon">
+    <h3>Project Recognition</h3>
+    <p>Recognized for building the GST Billing System and Amazon Clone projects using Java, Spring Boot, React, and MySQL.</p>
+  </div>
+
+  <!-- Award 4 -->
+  <div class="award-card">
+    <img src="award4.png" alt="Award Icon">
+    <h3>Innovation Award</h3>
+    <p>Awarded for creative solutions in software development, problem-solving, and implementing scalable web applications.</p>
+  </div>
+</section>
+
+</body>
+</html>
+>>>>>>> 6dc7c3b4e802808a9522b1486741922482c405d3

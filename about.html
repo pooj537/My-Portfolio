@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,3 +143,149 @@ h1 {
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Portfolio</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
+
+body {
+  background: linear-gradient(-45deg,#6a11cb,#2575fc,#ff6a00,#00c6ff);
+  background-size:400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  position:fixed; top:0; left:0; width:100%;
+  background: rgba(0,0,0,0.5); backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 50px; z-index:1000;
+}
+nav h2 {
+  font-size:1.5rem; font-weight:bold;
+  background: linear-gradient(90deg,#fff,#ffcc70);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+nav ul { list-style:none; display:flex; gap:30px; }
+nav ul li a { text-decoration:none; color:#fff; font-size:1rem; transition:0.3s; }
+nav ul li a:hover { color:#ffcc70; }
+
+/* ---------- About Container ---------- */
+.about-container {
+  max-width:1000px;
+  background: rgba(255,255,255,0.1);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 25px rgba(255,255,255,0.3);
+  animation: fadeIn 1.2s ease-in-out;
+  margin-top:100px; /* Adjust for navbar */
+}
+
+h1 {
+  text-align:center; font-size:3rem; margin-bottom:30px;
+  background: linear-gradient(90deg,#ffcc70,#00f2fe);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+
+.about-content {
+  display:flex; flex-wrap:wrap; gap:30px; align-items:center;
+}
+
+.profile-pic {
+  flex:1; min-width:250px; max-width:300px;
+  border-radius:50%; overflow:hidden;
+  border:5px solid #fff; box-shadow:0 0 25px #fff,0 0 50px rgba(255,255,255,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+.profile-pic img { width:100%; height:100%; object-fit:cover; }
+
+.details { flex:2; }
+.details h2 { font-size:2rem; margin-bottom:15px; }
+.details p { font-size:1.1rem; margin-bottom:20px; line-height:1.8; }
+.highlight { color:#ffcc70; font-weight:bold; }
+.info-list { margin-top:20px; }
+.info-list li { margin-bottom:10px; font-size:1.05rem; list-style:none; }
+.info-list ion-icon { margin-right:8px; color:#ffcc70; }
+
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+
+/* ---------- Responsive ---------- */
+@media (max-width:768px){
+  .about-content{ flex-direction:column; align-items:center; }
+  nav{ padding:15px 20px; }
+  nav ul{ gap:15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h2>MyPortfolio</h2>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about-container">
+  <h1>About Me</h1>
+  <div class="about-content">
+    <!-- Profile Image -->
+    <div class="profile-pic">
+      <img src="poo.jpg" alt="Pooja Wale">
+    </div>
+
+    <!-- About Details -->
+    <div class="details">
+      <h2>Hi, I'm <span class="highlight">Pooja Wale</span> 👋</h2>
+      <p>
+        I am a passionate <span class="highlight">Full Stack Java Developer</span> with expertise in 
+        <span class="highlight">Java, Spring Boot, Web Development, and Database Management</span>.  
+        I graduated with <span class="highlight">9.0 CGPA</span> and I’m currently 
+        working as a <span class="highlight">Full Stack Java Developer Intern at Venture Digital India</span>.
+      </p>
+      <p>
+        My goal is to leverage my skills in <span class="highlight">Java Development, Software Engineering, and Problem Solving</span> 
+        to build innovative, scalable, and impactful solutions.
+      </p>
+
+      <!-- Info List -->
+      <ul class="info-list">
+        <li><ion-icon name="school-outline"></ion-icon> Graduated with <span class="highlight">9.0 CGPA</span></li>
+        <li><ion-icon name="briefcase-outline"></ion-icon> Intern at <span class="highlight">Venture Digital India</span></li>
+        <li><ion-icon name="code-slash-outline"></ion-icon> Skills: <span class="highlight">Java, Spring Boot, MySQL, HTML, CSS, JS, React</span></li>
+        <li><ion-icon name="rocket-outline"></ion-icon> Aspiring <span class="highlight">Software Developer</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+>>>>>>> 6dc7c3b4e802808a9522b1486741922482c405d3

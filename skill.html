@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - Portfolio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+    body {
+      background: linear-gradient(-45deg,#ff4e50,#1fddff,#28a745,#ffcc70);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color:#fff;
+      min-height:100vh;
+      padding-top: 80px;
+    }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}
+    }
+
+    /* Navbar */
+    nav{
+      position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.5);backdrop-filter:blur(12px);
+      display:flex;justify-content:space-between;align-items:center;padding:15px 50px;z-index:1000;
+    }
+    nav h2{font-size:1.5rem;font-weight:bold;background:linear-gradient(90deg,#fff,#ffcc70);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    nav ul{list-style:none;display:flex;gap:30px;}
+    nav ul li a{text-decoration:none;color:#fff;font-size:1rem;transition:0.3s;}
+    nav ul li a:hover{color:#ffcc70;}
+
+    /* Skills Section */
+    .skills-container{max-width:1200px;margin:auto;text-align:center;padding:40px 20px;}
+    h1{font-size:3rem;margin-bottom:50px;background:linear-gradient(90deg,#ffcc70,#00f2fe);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+
+    .skills-grid{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:50px;
+    }
+
+    .skill{
+      position:relative;width:150px;height:150px;border-radius:50%;
+      background:rgba(255,255,255,0.1);display:flex;justify-content:center;align-items:center;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .skill:hover{transform:translateY(-10px);box-shadow:0 0 25px #ffcc70,0 0 50px #00f2fe;}
+
+    .skill svg{transform:rotate(-90deg);}
+    .skill circle{fill:none;stroke-width:12;stroke-linecap:round;}
+    .skill .bg{stroke:rgba(255,255,255,0.2);}
+    .skill .progress{stroke:#ffcc70;stroke-dasharray:440;stroke-dashoffset:440;transition:stroke-dashoffset 1s ease;}
+    .skill:hover .progress{stroke-dashoffset:calc(440 - (440*var(--percent)/100));}
+
+    .skill .skill-text{position:absolute;text-align:center;font-weight:bold;}
+    .skill .skill-text h3{font-size:1rem;margin-bottom:5px;}
+    .skill .skill-text p{font-size:1.2rem;}
+
+    @media(max-width:768px){nav{padding:15px 20px;}nav ul{gap:15px;} .skills-grid{gap:30px;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>MyPortfolio</h2>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="skills-container">
+  <h1>My Skills</h1>
+  <div class="skills-grid">
+
+    <!-- Backend -->
+    <div class="skill" style="--percent:95;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>Java</h3><p>95%</p></div>
+    </div>
+
+    <div class="skill" style="--percent:90;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>Spring Boot</h3><p>90%</p></div>
+    </div>
+
+    <div class="skill" style="--percent:85;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>REST API</h3><p>85%</p></div>
+    </div>
+
+    <!-- Frontend -->
+    <div class="skill" style="--percent:80;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>React</h3><p>80%</p></div>
+    </div>
+
+    <div class="skill" style="--percent:90;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>HTML/CSS/JS</h3><p>90%</p></div>
+    </div>
+
+    <!-- Database -->
+    <div class="skill" style="--percent:80;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>MySQL</h3><p>80%</p></div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill" style="--percent:75;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>Git & Maven</h3><p>75%</p></div>
+    </div>
+
+    <div class="skill" style="--percent:70;"><svg width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"></circle>
+      <circle class="progress" cx="75" cy="75" r="70"></circle>
+    </svg>
+      <div class="skill-text"><h3>Docker Basics</h3><p>70%</p></div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Home</title>
+  <style>
+    /* ---------- Base Styles ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ---------- Animated Gradient Background ---------- */
+    body {
+      background: linear-gradient(-45deg, #ff4e50, #1fddff, #28a745, #ffcc70);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ---------- Navbar ---------- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      z-index: 1000;
+    }
+    nav h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #fff, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffcc70;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #ffcc70, #00f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .typing {
+      color: #fff;
+      font-weight: bold;
+      border-right: 2px solid #fff;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.7s infinite;
+    }
+
+    /* ---------- Profile Image ---------- */
+    .profile-pic {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0px 0px 25px #fff, 0px 0px 60px rgba(255,255,255,0.5);
+      margin: 20px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---------- Buttons ---------- */
+    .buttons {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .btn-hire {
+      background: #fff;
+      color: #000;
+    }
+    .btn-hire:hover {
+      background: #ffcc70;
+      color: #000;
+    }
+    .btn-resume {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+    .btn-resume:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ---------- Social Icons ---------- */
+    .social {
+      margin-top: 40px;
+    }
+    .social a {
+      margin: 0 15px;
+      font-size: 2rem;
+      color: #fff;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social a:hover {
+      color: #ffcc70;
+      transform: scale(1.2);
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px;
+      }
+      nav ul {
+        gap: 15px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>MyPortfolio</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="Award.html">Award</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Hello, I'm <span>POOJA WALE</span> 👋</h1>
+    <h2>I specialize in <span class="typing"></span></h2>
+
+    <!-- Profile Picture -->
+    <div class="profile-pic">
+      <img src="poo.jpg" alt="Your Photo">
+    </div>
+
+    <div class="buttons">
+      <a href="contact.html" class="btn btn-hire">🚀 Hire Me</a>
+      <a href="ResumePooja.docx" class="btn btn-resume">📄 Download Resume</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="social">
+      <a href="https://github.com/pooj537"><ion-icon name="logo-github"></ion-icon></a>
+      <a href="https://www.lindin.com/in/pooja-wale-223b44322"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="poojawale98"><ion-icon name="logo-instagram"></ion-icon></a>
+    </div>
+  </section>
+
+  <!-- Ionicons for social media -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Typing Effect JS -->
+  <script>
+    const texts = ["Java Development", "Frontend Development", "Web Design", "Database Management", "Problem Solving"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.querySelector(".typing").textContent = letter;
+
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1200); 
+      } else {
+        setTimeout(type, 120);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
